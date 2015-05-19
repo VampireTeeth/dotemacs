@@ -18,6 +18,7 @@
     auto-complete
     ;company
     helm
+    ac-helm
     function-args
     yasnippet
     evil
@@ -69,6 +70,11 @@
 (require 'helm-config)
 (helm-mode 1)
 
+;ac-helm configuration
+(require 'ac-helm)
+(global-set-key (kbd "C-:") 'ac-complete-with-helm)
+(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
+
 ;autopair configuration
 (require 'autopair)
 (add-hook 'prog-mode-hook 'autopair-mode)
@@ -117,6 +123,7 @@
 (add-to-list 'auto-mode-alist '("\\.pas\\'" . pascal-mode))
 (add-hook 'pascal-mode-hook
 	  (lambda ()
+	    (auto-complete-mode)
 	    (define-key pascal-mode-map "\t" 'pascal-complete-word)
 	    (define-key pascal-mode-map "\M-;" 'pascal-show-completions)
 	    (set (make-local-variable 'compile-command)
@@ -129,4 +136,4 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(add-hook 'after-init-hook 'my:misg-configs)
+(add-hook 'after-init-hook 'my:misc-configs)
