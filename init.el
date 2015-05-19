@@ -15,20 +15,21 @@
   ;;                 sass-mode rainbow-mode scss-mode solarized-theme
   ;;                 volatile-highlights yaml-mode yari zenburn-theme)
   '(
-    ;auto-complete
-    company
+    auto-complete
+    ;company
     helm
     function-args
     yasnippet
     evil
-    ;auto-complete-c-headers
+    auto-complete-c-headers
     ;flymake-google-cpplint
     autopair
     highlight-parentheses
     ace-window
-    ;auto-complete-clang
+    auto-complete-clang
     paredit
     iedit
+    clojure-mode
     cider
     )
   "A list of packages to ensure are installed at launch.")
@@ -86,12 +87,17 @@
 (global-semantic-idle-scheduler-mode 1)
 (semantic-mode 1)
 
+;auto-complete setup
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+
 ;Company setup
-(require 'company)
-(define-key company-mode-map [(tab)] 'company-complete)
-(define-key company-mode-map (kbd "C-x C-y") 'company-yasnippet)
-(define-key company-mode-map [(control tab)] 'company-semantic)
-(add-hook 'after-init-hook 'global-company-mode)
+;(require 'company)
+;(define-key company-mode-map [(tab)] 'company-complete)
+;(define-key company-mode-map (kbd "C-x C-y") 'company-yasnippet)
+;(define-key company-mode-map [(control tab)] 'company-semantic)
+;(add-hook 'after-init-hook 'global-company-mode)
 
 ;function-args setup
 (require 'function-args)
@@ -106,6 +112,15 @@
 (global-set-key (kbd "C-x C-x") 'ace-window)
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+
+;pascal-mode config
+(add-to-list 'auto-mode-alist '("\\.pas\\'" . pascal-mode))
+(add-hook 'pascal-mode-hook
+	  (lambda ()
+	    (define-key pascal-mode-map "\t" 'pascal-complete-word)
+	    (define-key pascal-mode-map "\M-;" 'pascal-show-completions)
+	    (set (make-local-variable 'compile-command)
+		 (concat "fpc " (file-name-nondirectory (buffer-file-name))))) t)
 
 ;misc configs
 (setq make-backup-files nil)
