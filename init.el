@@ -123,5 +123,10 @@
 		 (concat "fpc " (file-name-nondirectory (buffer-file-name))))) t)
 
 ;misc configs
-(setq make-backup-files nil)
+(defun my:misc-configs ()
+  (setq make-backup-files nil)
+  (setq backup-inhibited t))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(add-hook 'after-init-hook 'my:misg-configs)
