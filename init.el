@@ -21,7 +21,7 @@
     ac-helm
     function-args
     yasnippet
-    evil
+    ;evil
     auto-complete-c-headers
     ;flymake-google-cpplint
     autopair
