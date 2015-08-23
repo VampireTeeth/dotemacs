@@ -58,8 +58,8 @@
 (yas-global-mode 1)
 
 ;start evil-mode with emacs
-(require 'evil)
-(evil-mode 1)
+;(require 'evil)
+;(evil-mode 1)
 
 
 ;iedit configuration
