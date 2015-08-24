@@ -32,6 +32,7 @@
     iedit
     clojure-mode
     cider
+    ;eww-lnum
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -136,6 +137,9 @@
 	    (set (make-local-variable 'compile-command)
 		 (concat "fpc " (file-name-nondirectory (buffer-file-name))))) t)
 
+;eww config
+;(require 'eww-lnum)
+;(require 'eww)
 
 
 (defun pretty-print-xml-region (begin end)
