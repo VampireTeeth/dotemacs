@@ -55,7 +55,7 @@
 
 ;start yasnippet with emacs
 (require 'yasnippet)
-(yas-global-mode 1)
+  (yas-global-mode 1)
 
 ;start evil-mode with emacs
 ;(require 'evil)
@@ -69,6 +69,9 @@
 ;helm-config configuration
 (require 'helm-config)
 (helm-mode 1)
+;rebind tab to do persistent action
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(global-set-key (kbd "C-c C-m") 'helm-find)
 
 ;ac-helm configuration
 (require 'ac-helm)
@@ -113,6 +116,10 @@
 (define-key c-mode-map (kbd "M-o") 'fa-show)
 (define-key c++-mode-map (kbd "M-o") 'fa-show)
 
+;tramp mode setup
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
 ;ace-window config
 ;(global-set-key (kbd "M-p") 'ace-window)
 (global-set-key (kbd "C-x C-x") 'ace-window)
@@ -128,6 +135,23 @@
 	    (define-key pascal-mode-map "\M-;" 'pascal-show-completions)
 	    (set (make-local-variable 'compile-command)
 		 (concat "fpc " (file-name-nondirectory (buffer-file-name))))) t)
+
+
+
+(defun pretty-print-xml-region (begin end)
+  "Pretty format XML markup in region. You need to have nxml-mode
+http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
+this.  The function inserts linebreaks to separate tags that have
+nothing but whitespace between them.  It then indents the markup
+by using nxml's indentation rules."
+  (interactive "r")
+  (save-excursion
+    (nxml-mode)
+    (goto-char begin)
+    (while (search-forward-regexp "\>[ \\t]*\<" nil t)
+      (backward-char) (insert "\n"))
+    (indent-region begin end))
+  (message "Ah, much better!"))
 
 ;misc configs
 (defun my:misc-configs ()
