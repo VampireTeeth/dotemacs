@@ -21,7 +21,7 @@
     ac-helm
     function-args
     yasnippet
-    ;evil
+    evil
     auto-complete-c-headers
     ;flymake-google-cpplint
     autopair
@@ -32,6 +32,8 @@
     iedit
     clojure-mode
     cider
+    php-mode
+    web-mode
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -58,8 +60,8 @@
   (yas-global-mode 1)
 
 ;start evil-mode with emacs
-;(require 'evil)
-;(evil-mode 1)
+(require 'evil)
+(evil-mode 1)
 
 
 ;iedit configuration
