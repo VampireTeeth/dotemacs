@@ -164,6 +164,17 @@ by using nxml's indentation rules."
   (setq make-backup-files nil)
   (setq backup-inhibited t))
 
+
+(defun my:load-path-env ()
+  (interactive)
+  (let* ((path (shell-command-to-string "source ~/.profile; echo -n $PATH"))
+	 (newpath (concat (getenv "PATH") path)))
+    (message "New PATH is: %s" newpath)
+    (setq exec-path
+	  (append
+	   (split-string-and-unquote path ":")
+	   exec-path))))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'after-init-hook 'my:misc-configs)
