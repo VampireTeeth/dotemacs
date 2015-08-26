@@ -144,7 +144,7 @@
 ;(require 'eww)
 
 
-(defun pretty-print-xml-region (begin end)
+(defun my:pprint-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode
 http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
 this.  The function inserts linebreaks to separate tags that have
@@ -178,3 +178,4 @@ by using nxml's indentation rules."
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'after-init-hook 'my:misc-configs)
+(put 'narrow-to-region 'disabled nil)

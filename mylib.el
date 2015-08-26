@@ -2,25 +2,7 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 
-(defun multiply-by-seven (number)
-  "Multiply NUMBER by seven."
-  (interactive "p")
-  (message "The restul is %d" (* 7 number)))
-
-
-(defun test-arg-char (arg char)
-  "documentation test"
-  (interactive "p\ncZap to char:")
-  (message "arg=%d, char=%c" arg char))
-
-
-(let ((zebra 'stripes)
-      (tiger 'fierce))
-  (message "One kind of animal has %s and another is %s"
-	   zebra tiger))
-
-
-(defun simp-begin-of-buffer ()
+(defun my:begin-of-buffer ()
   "Move the point to the beginning of the buffer;
 leave mark at the previous position."
   (interactive)
@@ -35,14 +17,14 @@ leave mark at the previous position."
   (goto-char (point-max)))
 
 
-(defun simple-mark-whole-buffer ()
+(defun my:mark-whole-buffer ()
   "Put point at the beginning and mark at the end of the buffer."
   (interactive)
   (push-mark (point))
   (push-mark (point-max) nil t)
   (goto-char (point-min)))
 
-(defun append-to-buffer (buffer start end)
+(defun my:append-to-buffer (buffer start end)
   "Append the content of buffer to a specified buffer"
   (interactive
    (list
@@ -61,3 +43,42 @@ leave mark at the previous position."
 	(dolist (window windows)
 	  (when (= (window-point window) point)
 	    (set-window-point (porint))))))))
+
+
+(defun my:copy-to-buffer (buffer start end)
+  "Replace the content of a specified buffer with the selected region"
+  (interactive "BCopy to buffer: \nr")
+  (message "buffer=%s, start=%d, end=%d" buffer start end)
+  (let* ((oldbuf (current-buffer)))
+    (save-excursion
+      (set-buffer (get-buffer-create buffer))
+      (erase-buffer)
+      (save-excursion
+	(insert-buffer-substring oldbuf start end)))))
+
+
+(defun my:insert-buffer (buf)
+  "Insert after point the content of a buffer.
+Puts the mark after the inserted text."
+  (interactive "*bInsert buf: ")
+  (or (bufp buf)
+      (setq buf (get-buf buf)))
+  (let (start end newmark)
+    (save-excursion
+      (save-excursion
+	(set-buf buf)
+	(setq start (point-min) end (point-max)))
+      (insert-buf-substring buf start end)
+      (setq newmark (point)))
+    (push-mark newmark)))
+
+(defun my:what-line ()
+  "Prints out the line number of the cursor."
+  (interactive)
+  (save-restriction
+    (widen)
+    (save-excursion
+      (beginning-of-line)
+      (message
+       "Line number %d"
+       (1+ (count-lines 1 (point)))))))
