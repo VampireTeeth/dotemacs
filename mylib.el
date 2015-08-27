@@ -82,3 +82,16 @@ Puts the mark after the inserted text."
       (message
        "Line number %d"
        (1+ (count-lines 1 (point)))))))
+
+
+(defun my:zap-to-char (times char)
+  "Kill the region starting from
+the point up to times occurence of char"
+  (interactive "p\ncZap to char: ")
+  (kill-region
+   (point)
+   (progn
+     (search-forward
+      (char-to-string char)
+      nil nil times)
+    (point))))
