@@ -34,6 +34,7 @@
     cider
     php-mode
     web-mode
+    smarty-mode
     ;eww-lnum
     )
   "A list of packages to ensure are installed at launch.")
@@ -62,7 +63,7 @@
 
 ;start evil-mode with emacs
 (require 'evil)
-(evil-mode 1)
+;(evil-mode 1)
 
 
 ;iedit configuration
@@ -74,7 +75,8 @@
 (helm-mode 1)
 ;rebind tab to do persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-(global-set-key (kbd "C-c C-m") 'helm-find)
+(global-set-key (kbd "C-x C-h C-f") 'helm-find)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;ac-helm configuration
 (require 'ac-helm)
@@ -144,6 +146,18 @@
 ;(require 'eww)
 
 
+;web-mode config
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+;smarty-mode config
+(require 'smarty-mode)
+
+
+
+
+;Helper functions
 (defun my:pprint-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode
 http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
