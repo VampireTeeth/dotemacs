@@ -95,3 +95,18 @@ the point up to times occurence of char"
       (char-to-string char)
       nil nil times)
     (point))))
+
+
+(defun my:copy-region-as-kill (begin end)
+  "Save the region as if killed without killing it"
+  (interactive "r")
+  (if (eq last-command 'kill-region)
+      (kill-append (filter-buffer-substring begin end) nil)
+    (kill-new (filter-buffer-substring begin end)))
+  (if (transient-mark-mode)
+      (setq deactivate-mark t))
+  nil)
+
+(defun my:show-yank-menu ()
+  (interactive)
+  (popup-menu 'yank-menu))
