@@ -110,3 +110,10 @@ the point up to times occurence of char"
 (defun my:show-yank-menu ()
   (interactive)
   (popup-menu 'yank-menu))
+
+(defun my:while-demo ()
+  (interactive)
+  (setq animals '(tiger bear deer wolf))
+  (while animals
+    (message "I am a %s" (car animals))
+    (setq animals (cdr animals))))
