@@ -76,7 +76,8 @@
 ;rebind tab to do persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "C-x C-h C-f") 'helm-find)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-f") 'find-file)
 
 ;ac-helm configuration
 (require 'ac-helm)

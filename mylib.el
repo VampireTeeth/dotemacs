@@ -117,3 +117,9 @@ the point up to times occurence of char"
   (while animals
     (message "I am a %s" (car animals))
     (setq animals (cdr animals))))
+
+(defun my:reverse-list (list)
+  "Using dolist, reverse the order of list."
+  (let (value)
+    (dolist (element list value)
+      (setq value (cons element value)))))
