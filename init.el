@@ -5,7 +5,6 @@
 ;initialize package.el
 (package-initialize)
 
-
 ;installing a list of packages
 (require 'cl)
 (defvar prelude-packages
@@ -176,9 +175,24 @@ by using nxml's indentation rules."
 
 ;misc configs
 (defun my:misc-configs ()
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
   (setq make-backup-files nil)
   (setq backup-inhibited t))
 
+(defun my:indentation-setup (n)
+  (setq indent-tabs-mode nil)
+  (setq tab-width n)
+  (setq tab-stop-list (number-sequence n 200 n))
+  (setq c-basic-offset n)
+  (setq coffee-tab-width n) ; coffeescript
+  (setq javascript-indent-level n) ; javascript-mode
+  (setq js-indent-level n) ; js-mode
+  (setq js2-basic-offset n) ; js2-mode
+  (setq web-mode-markup-indent-offset n) ; web-mode, html tag in html file
+  (setq web-mode-css-indent-offset n) ; web-mode, css in html file
+  (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
+  (setq css-indent-offset n))
 
 (defun my:load-path-env ()
   (interactive)
@@ -193,4 +207,7 @@ by using nxml's indentation rules."
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'after-init-hook 'my:misc-configs)
+;;(add-hook 'prog-mode-hook 'my:misc-configs)
+(add-hook 'prog-mode-hook (lambda () (my:indentation-setup 2)))
+
 (put 'narrow-to-region 'disabled nil)
