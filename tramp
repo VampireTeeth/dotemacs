@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <15/08/28 18:29:06 /Users/emagine/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <15/09/02 18:38:24 /Users/emagine/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -40,8 +40,7 @@
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
   ("readlink" "\\readlink")
-  ("ls" "/bin/ls --color=never")
-  ("ls-dired" t))
+  ("ls" "/bin/ls --color=never"))
  (["ssh" "emagine" "drc-prod-1" nil nil]
   ("locale" "LC_ALL=en_US.utf8")
   ("uname" "Linux 2.6.32-220.el6.x86_64")
@@ -81,4 +80,56 @@
   ("ls-dired" t)
   ("readlink" "\\readlink")
   ("gvfs-monitor-dir" nil)
-  ("inotifywait" nil)))
+  ("inotifywait" nil))
+ (["ssh" "emagine" "drc-prod-2" nil nil]
+  ("locale" "LC_ALL=en_US.utf8")
+  ("uname" "Linux 2.6.32-220.el6.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/emagine")
+  ("file-exists" "test -e")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 511)
+  ("gid-string" "emaginegroup")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("readlink" "\\readlink")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t))
+ (["ssh" nil "centos" nil nil]
+  ("locale" "LC_ALL=en_US.utf8")
+  ("uname" "Linux 3.10.0-229.7.2.el7.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/emagine")
+  ("file-exists" "test -e")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1000)
+  ("gid-string" "emagine")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl"))
+ (["ssh" "root" "centos" nil nil]
+  ("locale" "LC_ALL=C")
+  ("uname" "Linux 3.10.0-229.7.2.el7.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/root")
+  ("file-exists" "test -e")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("gid-string" "root")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("readlink" "\\readlink")))

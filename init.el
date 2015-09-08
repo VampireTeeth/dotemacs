@@ -16,8 +16,8 @@
   '(
     auto-complete
     ;company
-    helm
-    ac-helm
+    ;helm
+    ;ac-helm
     function-args
     yasnippet
     evil
@@ -35,6 +35,7 @@
     web-mode
     smarty-mode
     ;eww-lnum
+    fiplr
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -70,18 +71,18 @@
 
 
 ;helm-config configuration
-(require 'helm-config)
-(helm-mode 1)
+;(require 'helm-config)
+;(helm-mode 1)
 ;rebind tab to do persistent action
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-(global-set-key (kbd "C-x C-h C-f") 'helm-find)
+;(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+;(global-set-key (kbd "C-x C-h C-f") 'helm-find)
 ;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x C-f") 'find-file)
+;(global-set-key (kbd "C-x C-f") 'find-file)
 
 ;ac-helm configuration
-(require 'ac-helm)
-(global-set-key (kbd "C-:") 'ac-complete-with-helm)
-(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
+;(require 'ac-helm)
+;(global-set-key (kbd "C-:") 'ac-complete-with-helm)
+;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
 
 ;autopair configuration
 (require 'autopair)
@@ -145,6 +146,10 @@
 ;(require 'eww-lnum)
 ;(require 'eww)
 
+;fiplr config
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+(global-set-key (kbd "C-x d") 'fiplr-find-directory)
+
 
 ;web-mode config
 (require 'web-mode)
@@ -175,6 +180,7 @@ by using nxml's indentation rules."
 
 ;misc configs
 (defun my:misc-configs ()
+  (ido-mode 1)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq make-backup-files nil)
