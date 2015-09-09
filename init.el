@@ -55,7 +55,7 @@
       (package-install p))))
 
 ;load the wombat theme
-(load-theme 'wombat)
+(load-theme 'deeper-blue)
 
 ;start yasnippet with emacs
 (require 'yasnippet)
@@ -155,6 +155,7 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 
 ;smarty-mode config
 (require 'smarty-mode)
@@ -181,13 +182,11 @@ by using nxml's indentation rules."
 ;misc configs
 (defun my:misc-configs ()
   (ido-mode 1)
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2)
   (setq make-backup-files nil)
   (setq backup-inhibited t))
 
 (defun my:indentation-setup (n)
-  (setq indent-tabs-mode nil)
+  (setq indent-tabs-mode t)
   (setq tab-width n)
   (setq tab-stop-list (number-sequence n 200 n))
   (setq c-basic-offset n)
@@ -214,6 +213,7 @@ by using nxml's indentation rules."
 
 (add-hook 'after-init-hook 'my:misc-configs)
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
-(add-hook 'prog-mode-hook (lambda () (my:indentation-setup 2)))
+(add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
+(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
 
 (put 'narrow-to-region 'disabled nil)
