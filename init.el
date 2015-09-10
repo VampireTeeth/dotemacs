@@ -151,14 +151,15 @@
 (global-set-key (kbd "C-x d") 'fiplr-find-directory)
 
 
+;smarty-mode config
+;(require 'smarty-mode)
+
 ;web-mode config
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 
-;smarty-mode config
-(require 'smarty-mode)
 
 
 
@@ -214,6 +215,6 @@ by using nxml's indentation rules."
 (add-hook 'after-init-hook 'my:misc-configs)
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
-(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
+;;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
 
 (put 'narrow-to-region 'disabled nil)
