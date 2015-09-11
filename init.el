@@ -183,6 +183,7 @@ by using nxml's indentation rules."
 ;misc configs
 (defun my:misc-configs ()
   (ido-mode 1)
+  (global-set-key (kbd "C-x C-d") 'dired)
   (setq make-backup-files nil)
   (setq backup-inhibited t))
 
