@@ -185,7 +185,8 @@ by using nxml's indentation rules."
   (ido-mode 1)
   (global-set-key (kbd "C-x C-d") 'dired)
   (setq make-backup-files nil)
-  (setq backup-inhibited t))
+  (setq backup-inhibited t)
+  (global-hl-line-mode 1))
 
 (defun my:indentation-setup (n)
   (setq indent-tabs-mode t)
