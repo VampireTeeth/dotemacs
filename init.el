@@ -161,6 +161,10 @@
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 
 
+;sgml-mode config
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . sgml-mode))
+
+
 
 
 
@@ -192,6 +196,7 @@ by using nxml's indentation rules."
   (setq indent-tabs-mode t)
   (setq tab-width n)
   (setq tab-stop-list (number-sequence n 200 n))
+  (setq sgml-basic-offset n)
   (setq c-basic-offset n)
   (setq coffee-tab-width n) ; coffeescript
   (setq javascript-indent-level n) ; javascript-mode
