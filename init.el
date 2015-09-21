@@ -36,7 +36,18 @@
     smarty-mode
     ;eww-lnum
     fiplr
-    )
+	python-mode
+	;;To use elpy, install following packages
+	;;pip install rope
+	;;pip install jedi
+	;;pip install flake8
+	;;pip install importmagic
+	elpy
+	;;project management package
+	projectile
+	;;git integration
+	magit
+	)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
@@ -164,6 +175,9 @@
 ;sgml-mode config
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . sgml-mode))
 
+;python-mode config
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+
 
 ;flymake configuration for PHP
 (require 'flymake)
@@ -231,6 +245,11 @@ by using nxml's indentation rules."
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
   (setq css-indent-offset n))
 
+(defun my:web-mode-setup ()
+  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-auto-expanding t)
+  (setq web-mode-enable-css-colorization t))
+
 (defun my:load-path-env ()
   (interactive)
   (let* ((path (shell-command-to-string "source ~/.profile; echo -n $PATH"))
@@ -247,6 +266,8 @@ by using nxml's indentation rules."
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
 ;;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
+(add-hook 'web-mode-hook 'my:web-mode-setup)
+(add-hook 'python-mode-hook (lambda() (elpy-enable)))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
