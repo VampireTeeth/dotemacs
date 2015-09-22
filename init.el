@@ -47,6 +47,14 @@
 	projectile
 	;;git integration
 	magit
+	;;To use ggtags, install gnu global and pygments
+	;;1. Install GNU global
+	;;Download GNU global
+	;;./configure --prefix=<PREFIX> --with-exuberant-ctags=/usr/local/bin/ctags
+	;;make && sudo make install
+	;;2. Install pygments
+	;;pip install pygments
+	ggtags
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -243,7 +251,8 @@ by using nxml's indentation rules."
   (setq web-mode-markup-indent-offset n) ; web-mode, html tag in html file
   (setq web-mode-css-indent-offset n) ; web-mode, css in html file
   (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
-  (setq css-indent-offset n))
+  (setq css-indent-offset n)
+  (setq python-indent n))
 
 (defun my:web-mode-setup ()
   (setq web-mode-enable-auto-pairing t)
@@ -260,14 +269,21 @@ by using nxml's indentation rules."
 	   (split-string-and-unquote path ":")
 	   exec-path))))
 
+(defun my:elpy-config ()
+  (elpy-enable)
+  (define-key python-mode-map (kbd "TAB") 'elpy-company-backend))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'after-init-hook 'my:misc-configs)
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
-;;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
+;;(remove-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
+;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'web-mode-hook 'my:web-mode-setup)
-(add-hook 'python-mode-hook (lambda() (elpy-enable)))
+;(add-hook 'python-mode-hook (lambda() (elpy-enable)))
+;(remove-hook 'python-mode-hook (lambda() (elpy-enable)))
+(add-hook 'python-mode-hook 'my:elpy-config)
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
