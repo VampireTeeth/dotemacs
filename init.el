@@ -278,6 +278,7 @@ by using nxml's indentation rules."
 (add-hook 'after-init-hook 'my:misc-configs)
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
+(add-hook 'prog-mode-hook (lambda () (ggtags-mode t)))
 ;;(remove-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
 ;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'web-mode-hook 'my:web-mode-setup)
