@@ -47,6 +47,8 @@
 	projectile
 	;;git integration
 	magit
+	;;svn integration
+	psvn
 	;;To use ggtags, install gnu global and pygments
 	;;1. Install GNU global
 	;;Download GNU global
@@ -279,6 +281,7 @@ by using nxml's indentation rules."
 ;;(add-hook 'prog-mode-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'prog-mode-hook (lambda () (ggtags-mode t)))
+(add-hook 'prog-mode-hook (lambda () (projectile-mode t)))
 ;;(remove-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
 ;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'web-mode-hook 'my:web-mode-setup)
