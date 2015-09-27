@@ -99,6 +99,7 @@
 	"yasnippet"
 	"projectile"
 	"ggtags"
+	"ensime"
 	"misc"
 	)
   "A list of file suffix to load.")
