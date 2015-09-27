@@ -57,6 +57,10 @@
 	;;2. Install pygments
 	;;pip install pygments
 	ggtags
+	;;ensime for scala
+	;;scala-mode2 for scala
+	ensime
+	scala-mode2
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -75,219 +79,31 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-;load the wombat theme
-(load-theme 'deeper-blue)
-
-;start yasnippet with emacs
-(require 'yasnippet)
-  (yas-global-mode 1)
-
-;start evil-mode with emacs
-(require 'evil)
-(evil-mode 1)
 
 
-;iedit configuration
-(define-key global-map (kbd "C-c ;") 'iedit-mode)
+(defvar load-file-suffixes
+  '("ace-window"
+	"auto-complete"
+	"autopair"
+	"cedet"
+	"elpy"
+	"evil"
+	"fiplr"
+	"flymake"
+	"function-args"
+	"highlight-parentheses"
+	"iedit"
+	"pascal-mode"
+	"tramp"
+	"web-mode"
+	"yasnippet"
+	"projectile"
+	"ggtags"
+	"misc"
+	)
+  "A list of file suffix to load.")
 
-
-;helm-config configuration
-;(require 'helm-config)
-;(helm-mode 1)
-;rebind tab to do persistent action
-;(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-;(global-set-key (kbd "C-x C-h C-f") 'helm-find)
-;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-;(global-set-key (kbd "C-x C-f") 'find-file)
-
-;ac-helm configuration
-;(require 'ac-helm)
-;(global-set-key (kbd "C-:") 'ac-complete-with-helm)
-;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
-
-;autopair configuration
-(require 'autopair)
-(add-hook 'prog-mode-hook 'autopair-mode)
-
-;highlight parenthesis configuration
-(require 'highlight-parentheses)
-(global-highlight-parentheses-mode 1)
-;;(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
-
-
-;Turn on Semantics (CEDET)
-;Semantic setup
-(require 'cc-mode)
-(require 'semantic)
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(semantic-mode 1)
-
-;auto-complete setup
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-
-;Company setup
-;(require 'company)
-;(define-key company-mode-map [(tab)] 'company-complete)
-;(define-key company-mode-map (kbd "C-x C-y") 'company-yasnippet)
-;(define-key company-mode-map [(control tab)] 'company-semantic)
-;(add-hook 'after-init-hook 'global-company-mode)
-
-;function-args setup
-(require 'function-args)
-(fa-config-default)
-;;(define-key c-mode-map [(control tab)] 'moo-complete)
-;;(define-key c++-mode-map [(control tab)] 'moo-complete)
-(define-key c-mode-map (kbd "M-o") 'fa-show)
-(define-key c++-mode-map (kbd "M-o") 'fa-show)
-
-;tramp mode setup
-(require 'tramp)
-(setq tramp-default-method "ssh")
-
-;ace-window config
-;(global-set-key (kbd "M-p") 'ace-window)
-(global-set-key (kbd "C-x C-x") 'ace-window)
-(global-set-key (kbd "RET") 'newline-and-indent)
-
-
-;pascal-mode config
-(add-to-list 'auto-mode-alist '("\\.pas\\'" . pascal-mode))
-(add-hook 'pascal-mode-hook
-	  (lambda ()
-	    (auto-complete-mode)
-	    (define-key pascal-mode-map "\t" 'pascal-complete-word)
-	    (define-key pascal-mode-map "\M-;" 'pascal-show-completions)
-	    (set (make-local-variable 'compile-command)
-		 (concat "fpc " (file-name-nondirectory (buffer-file-name))))) t)
-
-;eww config
-;(require 'eww-lnum)
-;(require 'eww)
-
-;fiplr config
-(global-set-key (kbd "C-x f") 'fiplr-find-file)
-(global-set-key (kbd "C-x d") 'fiplr-find-directory)
-
-
-;smarty-mode config
-;(require 'smarty-mode)
-
-;web-mode config
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
-
-
-;sgml-mode config
-(add-to-list 'auto-mode-alist '("\\.xml\\'" . sgml-mode))
-
-;python-mode config
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-
-
-;flymake configuration for PHP
-(require 'flymake)
-(require 'php-mode)
-
-(defun flymake-php-init ()
-  "Use php to check the syntax of the current file."
-  (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
-	 (local (file-relative-name temp (file-name-directory buffer-file-name))))
-    (list "php" (list "-f" local "-l"))))
-
-(add-to-list 'flymake-err-line-patterns
-  '("\\(Parse\\|Fatal\\) error: +\\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
-
-(add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
-
-;; Drupal-type extensions
-(add-to-list 'flymake-allowed-file-name-masks '("\\.module$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.install$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.engine$" flymake-php-init))
-
-(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
-(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
-(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
-
-
-
-;Helper functions
-(defun my:pprint-xml-region (begin end)
-  "Pretty format XML markup in region. You need to have nxml-mode
-http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
-this.  The function inserts linebreaks to separate tags that have
-nothing but whitespace between them.  It then indents the markup
-by using nxml's indentation rules."
-  (interactive "r")
-  (save-excursion
-    (nxml-mode)
-    (goto-char begin)
-    (while (search-forward-regexp "\>[ \\t]*\<" nil t)
-      (backward-char) (insert "\n"))
-    (indent-region begin end))
-  (message "Ah, much better!"))
-
-;misc configs
-(defun my:misc-configs ()
-  (ido-mode 1)
-  (global-set-key (kbd "C-x C-d") 'dired)
-  (setq make-backup-files nil)
-  (setq backup-inhibited t)
-  (global-hl-line-mode 1))
-
-(defun my:indentation-setup (n)
-  (setq indent-tabs-mode t)
-  (setq tab-width n)
-  (setq tab-stop-list (number-sequence n 200 n))
-  (setq sgml-basic-offset n)
-  (setq c-basic-offset n)
-  (setq coffee-tab-width n) ; coffeescript
-  (setq javascript-indent-level n) ; javascript-mode
-  (setq js-indent-level n) ; js-mode
-  (setq js2-basic-offset n) ; js2-mode
-  (setq web-mode-markup-indent-offset n) ; web-mode, html tag in html file
-  (setq web-mode-css-indent-offset n) ; web-mode, css in html file
-  (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
-  (setq css-indent-offset n)
-  (setq python-indent n))
-
-(defun my:web-mode-setup ()
-  (setq web-mode-enable-auto-pairing t)
-  (setq web-mode-enable-auto-expanding t)
-  (setq web-mode-enable-css-colorization t))
-
-(defun my:load-path-env ()
-  (interactive)
-  (let* ((path (shell-command-to-string "source ~/.profile; echo -n $PATH"))
-	 (newpath (concat (getenv "PATH") path)))
-    (message "New PATH is: %s" newpath)
-    (setq exec-path
-	  (append
-	   (split-string-and-unquote path ":")
-	   exec-path))))
-
-(defun my:elpy-config ()
-  (elpy-enable)
-  (define-key python-mode-map (kbd "TAB") 'elpy-company-backend))
+(dolist (s load-file-suffixes)
+  (load-file (concat "~/dotemacs/init-" s ".el")))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-(add-hook 'after-init-hook 'my:misc-configs)
-;;(add-hook 'prog-mode-hook 'my:misc-configs)
-(add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
-(add-hook 'prog-mode-hook (lambda () (ggtags-mode t)))
-(add-hook 'prog-mode-hook (lambda () (projectile-mode t)))
-;;(remove-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
-;(add-hook 'smarty-mode-hook (lambda () (my:indentation-setup 4)))
-(add-hook 'web-mode-hook 'my:web-mode-setup)
-;(add-hook 'python-mode-hook (lambda() (elpy-enable)))
-;(remove-hook 'python-mode-hook (lambda() (elpy-enable)))
-(add-hook 'python-mode-hook 'my:elpy-config)
-
-(put 'narrow-to-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
