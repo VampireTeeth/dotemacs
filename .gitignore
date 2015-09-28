@@ -4,3 +4,6 @@ elpa/*
 semanticdb/*
 eshell/*
 tramp/*
+
+ido.last
+projectile-bookmarks.eld
