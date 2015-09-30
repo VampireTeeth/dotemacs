@@ -45,3 +45,4 @@ by using nxml's indentation rules."
 
 (add-hook 'after-init-hook 'my:misc-configs)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
+(add-hook 'sgml-mode-hook (lambda () (my:indentation-setup 4)))
