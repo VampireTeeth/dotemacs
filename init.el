@@ -61,6 +61,7 @@
 	;;scala-mode2 for scala
 	ensime
 	scala-mode2
+	sqlplus
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -108,3 +109,4 @@
   (load-file (concat "~/dotemacs/init-" s ".el")))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(put 'upcase-region 'disabled nil)
