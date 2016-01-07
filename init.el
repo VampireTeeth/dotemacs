@@ -1,11 +1,11 @@
-; start package.el with emacs
+										; start package.el with emacs
 (require 'package)
-; add MELPA to repository list
+										; add MELPA to repository list
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;initialize package.el
+										;initialize package.el
 (package-initialize)
 
-;installing a list of packages
+										;installing a list of packages
 (require 'cl)
 (defvar prelude-packages
   ;;'(ack-and-a-half auctex clojure-mode coffee-mode deft expand-region
@@ -14,28 +14,28 @@
   ;;                 sass-mode rainbow-mode scss-mode solarized-theme
   ;;                 volatile-highlights yaml-mode yari zenburn-theme)
   '(
-    auto-complete
-    ;company
-    ;helm
-    ;ac-helm
-    function-args
-    yasnippet
-    evil
-    auto-complete-c-headers
-    ;flymake-google-cpplint
-    autopair
-    highlight-parentheses
-    ace-window
-    auto-complete-clang
-    paredit
-    iedit
-    clojure-mode
-    cider
-    php-mode
-    web-mode
-    smarty-mode
-    ;eww-lnum
-    fiplr
+	;;auto-complete
+	company
+	;;helm
+	;;ac-helm
+	function-args
+	yasnippet
+	evil
+	auto-complete-c-headers
+	;;flymake-google-cpplint
+	autopair
+	highlight-parentheses
+	ace-window
+	auto-complete-clang
+	paredit
+	iedit
+	clojure-mode
+	cider
+	php-mode
+	web-mode
+	smarty-mode
+										;eww-lnum
+	fiplr
 	python-mode
 	;;To use elpy, install following packages
 	;;pip install rope
@@ -67,8 +67,8 @@
 
 (defun prelude-packages-installed-p ()
   (loop for p in prelude-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
+		when (not (package-installed-p p)) do (return nil)
+		finally (return t)))
 
 (unless (prelude-packages-installed-p)
   ;; check for new packages (package versions)
@@ -77,14 +77,15 @@
   (message "%s" " done.")
   ;; install the missing packages
   (dolist (p prelude-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
+	(when (not (package-installed-p p))
+	  (package-install p))))
 
 
 
 (defvar load-file-suffixes
   '("ace-window"
-	"auto-complete"
+	;;"auto-complete"
+	"company"
 	"autopair"
 	"cedet"
 	"elpy"
@@ -103,7 +104,7 @@
 	"ensime"
 	"misc"
 	)
-  "A list of file suffix to load.")
+	"A list of file suffix to load.")
 
 (dolist (s load-file-suffixes)
   (load-file (concat "~/dotemacs/init-" s ".el")))
