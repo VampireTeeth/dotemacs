@@ -1,11 +1,11 @@
-										; start package.el with emacs
+;; start package.el with emacs
 (require 'package)
-										; add MELPA to repository list
+;; add MELPA to repository list
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-										;initialize package.el
+;;initialize package.el
 (package-initialize)
 
-										;installing a list of packages
+;;installing a list of packages
 (require 'cl)
 (defvar prelude-packages
   ;;'(ack-and-a-half auctex clojure-mode coffee-mode deft expand-region
