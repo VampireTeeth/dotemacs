@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <16/01/22 12:30:46 /Users/emagine/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <16/01/28 17:09:47 /Users/emagine/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -37,19 +37,14 @@
   ("remote-path"
    ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
   ("remote-shell" "/bin/sh")
-  ("file-exists" "test -e")
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
-  ("ls" "/bin/ls --color=never")
-  ("ls-dired" t)
-  ("stat" "\\stat")
-  ("id" "/usr/bin/id")
-  ("gid-integer" 504)
-  ("gid-string" "emagine")
   ("readlink" "\\readlink")
-  ("git" "\\git")
-  ("~" "/home/emagine"))
+  ("stat" "\\stat")
+  ("file-exists" "test -e")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 504))
  (["sudo" "root" "jen" nil "ssh:jen|"]
   ("locale" "LC_ALL=en_US.utf8")
   ("uname" "Linux 2.6.32-300.3.1.el6uek.x86_64")
@@ -75,4 +70,46 @@
   ("locale" "LC_ALL=en_US.utf8")
   ("uname" "Linux 2.6.32-300.3.1.el6uek.x86_64")
   ("remote-shell" "/bin/sh")
-  ("~root" "/root")))
+  ("~root" "/root"))
+ (["ssh" "emagine" "10.200.178.22" nil nil]
+  ("locale" "LC_ALL=en_US.utf8")
+  ("uname" "Linux 2.6.32-220.el6.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 511)
+  ("gid-string" "emagine")
+  ("~" "/home/emagine")
+  ("readlink" "\\readlink"))
+ (["ssh" nil "ssh" nil nil]
+  nil)
+ (["ssh" nil "sudo" nil nil]
+  nil)
+ (["sudo" "root" "localhost" nil nil]
+  ("locale" "LC_ALL=C")
+  ("uname" "Darwin 14.4.0")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("ls" "/bin/ls")
+  ("ls-dired" nil)
+  ("stat" nil)
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("gid-string" "wheel"))
+ (["ssh" nil "localhost" nil nil]
+  nil))
