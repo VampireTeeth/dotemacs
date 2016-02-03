@@ -25,6 +25,10 @@ by using nxml's indentation rules."
   (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
   (put 'narrow-to-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
+  (add-to-list
+   'comint-preoutput-filter-functions
+   (lambda (output)
+	 (replace-regexp-in-string "\\[\\?*[0-9]+[a-zA-Z]" "" output)))
   (load-theme 'deeper-blue))
 
 (defun my:indentation-setup (n)
