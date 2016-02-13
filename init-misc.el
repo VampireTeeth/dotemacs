@@ -29,7 +29,9 @@ by using nxml's indentation rules."
    'comint-preoutput-filter-functions
    (lambda (output)
 	 (replace-regexp-in-string "\\[\\?*[0-9]+[a-zA-Z]" "" output)))
-  (load-theme 'deeper-blue))
+  (if (display-graphic-p)
+	  (load-theme 'deeper-blue)
+	(load-theme 'leuven)))
 
 (defun my:indentation-setup (n)
   (setq indent-tabs-mode t)
@@ -47,7 +49,14 @@ by using nxml's indentation rules."
   (setq css-indent-offset n)
   (setq python-indent n))
 
+(defun my:ansi-color-name-setup ()
+  (setq ansi-color-names-vector
+	  ["black" "tomato" "PaleGreen2" "gold1"
+	   "spring green" "MediumOrchid1" "cyan" "white"])
+  (setq ansi-color-map (ansi-color-make-color-map)))
+
 (add-hook 'after-init-hook 'my:misc-configs)
+(add-hook 'after-init-hook 'my:ansi-color-name-setup)
 (add-hook 'prog-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'sgml-mode-hook (lambda () (my:indentation-setup 4)))
 (add-hook 'term-mode-hook (lambda () (setq yas-dont-activate t)))
