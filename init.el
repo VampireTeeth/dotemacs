@@ -62,6 +62,7 @@
 	ensime
 	scala-mode2
 	sqlplus
+	neotree
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -102,6 +103,7 @@
 	"projectile"
 	"ggtags"
 	"ensime"
+	"neotree"
 	"misc"
 	)
 	"A list of file suffix to load.")
