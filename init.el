@@ -63,6 +63,7 @@
 	scala-mode2
 	sqlplus
 	neotree
+	avy
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -104,6 +105,7 @@
 	"ggtags"
 	"ensime"
 	"neotree"
+	"avy"
 	"misc"
 	)
 	"A list of file suffix to load.")
