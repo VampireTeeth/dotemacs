@@ -31,7 +31,11 @@ by using nxml's indentation rules."
 	 (replace-regexp-in-string "\\[\\?*[0-9]+[a-zA-Z]" "" output)))
   (if (display-graphic-p)
 	  (load-theme 'deeper-blue)
-	(load-theme 'leuven)))
+	(load-theme 'leuven))
+  (setq default-frame-alist
+		'(
+		  (width . 180)
+		  (height . 50))))
 
 (defun my:indentation-setup (n)
   (setq indent-tabs-mode t)
