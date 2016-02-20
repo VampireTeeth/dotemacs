@@ -30,6 +30,12 @@
 	paredit
 	iedit
 	clojure-mode
+
+	;;In case cider-nrepl is complaining about the version mismatch
+	;;{:repl
+	;;{
+	;;:plugins [[cider/cider-nrepl "0.11.0-SNAPSHOT"]]
+	;;}}
 	cider
 	php-mode
 	web-mode
