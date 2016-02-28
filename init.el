@@ -70,6 +70,8 @@
 	sqlplus
 	neotree
 	avy
+	;; inferior mongodb mode for emacs
+	inf-mongo
 	)
   "A list of packages to ensure are installed at launch.")
 
