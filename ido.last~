@@ -1,0 +1,123 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/steven/magnars-dotemacs/" . "settings/")
+ ("/home/steven/dev/clojurescript/" . "helloworld-cljs/")
+ ("/home/steven/dev/clojurescript/helloworld-cljs/out/server/" . "helloworld_cljs/")
+ ("/home/steven/dev/clojurescript/helloworld-cljs/out/" . "server/")
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/server/" . "helloworld_cljs/")
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/" . "server/")
+ ("/home/steven/dev/clojurescript/helloworld-cljs/" . "src/")
+ ("/home/steven/tools/mongodb/" . "x86_64-3.2.3/")
+ ("/home/steven/tools/" . "mongodb/")
+ ("/home/steven/dev/clojure/concurrency_play/src/" . "concurrency_play/")
+ ("/home/steven/dev/clojure/concurrency_play/" . "src/")
+ ("/home/steven/dev/clojure/" . "concurrency_play/")
+ ("/home/steven/dev/" . "clojurescript/")
+ ("/home/" . "steven/")
+ ("/" . "home/")
+ ("/home/steven/" . "dotemacs/")
+ ("/home/steven/dotemacs/" . "auto-save-list/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/steven/dotemacs/"
+ "/home/steven/magnars-dotemacs/settings/"
+ "/home/steven/.emacs.d/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/"
+ "/home/steven/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/out/server/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/out/server/helloworld_cljs/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/src/helloworld_cljs/"
+ "/home/steven/dev/clojure/concurrency_play/src/concurrency_play/"
+ "/home/steven/dev/clojure/concurrency_play/"
+ "/home/steven/.lein/"
+ "/home/steven/dev/cpp/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "setup-ido.el"
+ "ido.last"
+ "init-evil.el"
+ "ac-comphist.dat"
+ "project.clj"
+ "core.cljs"
+ ".env_vars"
+ "helloworld_cljs.js"
+ "core.clj"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/steven/dotemacs/" (22242 19104 864375 999000) "globalrc" "init-pascal-mode.el" "init-web-mode.el" "init-function-args.el" "init-ido.el" "projectile-bookmarks.eld" "init-highlight-parentheses.el" "init.el" ".gitignore" "ac-comphist.dat" "init-auto-complete.el" "init-ensime.el" "init-yasnippet.el" "init-iedit.el" "init-ace-window.el" "elpa/" "./" "snippets/" "init-fiplr.el" ".git/" "tutorial/" "ido.last" "init-projectile.el" "../" "init-neotree.el" "tramp" "init-cedet.el" "init-autopair.el" "init-avy.el" "init-evil.el" "init-sqlplus.el" "init-elpy.el" "auto-save-list/" "semanticdb/" "init-company.el" "init-tramp.el" "init-misc.el" "init-helm.el" "init-ggtags.el" "mylib.el" "init-flymake.el" "init-cider.el")
+
+ ("/home/steven/magnars-dotemacs/settings/" (22242 18061 218814 0) "setup-shell.el" "setup-org.el" "setup-magit.el" "setup-package.el" "mac.el" "setup-ffip.el" "setup-flycheck.el" "setup-ruby-mode.el" "./" "setup-clojure-mode.el" "setup-html-mode.el" "setup-perspective.el" "../" "sane-defaults.el" "mode-mappings.el" "setup-paredit.el" "appearance.el" "setup-markdown-mode.el" "setup-ido.el" "setup-elnode.el" "setup-hippie.el" "setup-rgrep.el" "my-misc.el" "setup-skewer.el" "setup-js2-mode.el" "setup-dired.el" "setup-yasnippet.el" "key-bindings.el")
+
+ ("/home/steven/magnars-dotemacs/" (22242 18658 97104 0) ".gitmodules" "var/" "README.md" "project-archetypes/" "init.el" ".gitignore" "custom.el" "settings/" "elpa/" "./" ".mc-lists.el" "snippets/" ".git/" "recentf" "ido.last" "../" "users/" "auto-save-list/" "site-lisp/" "themes/" "history" "backups/" ".places" "defuns/")
+
+ ("/home/steven/.lein/" (22217 40502 868593 0) "self-installs/" "./" "../" "profiles.clj")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/out/server/helloworld_cljs/" (22242 6603 792964 0) "core.cljs" "core.cljs.cache.edn" "./" "../" "core.js.map" "core.js")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/out/server/" (22242 6603 808971 999000) "BCE03FE.js" "cljs_deps.js" "./" "cljs/" "goog/" "../" "helloworld_cljs.js" "helloworld_cljs/" "B098ACE.js" "A260F29.js")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/" (22242 6554 636398 0) "core.cljs" "./" "../")
+
+ ("/home/steven/.emacs.d/" (22242 19025 660794 0) "globalrc" "init-pascal-mode.el" "init-web-mode.el" "init-function-args.el" "projectile-bookmarks.eld" "init-highlight-parentheses.el" "init.el" ".gitignore" "ac-comphist.dat" "init-auto-complete.el" "init-ensime.el" "init-yasnippet.el" "init-iedit.el" "init-ace-window.el" "elpa/" "./" "snippets/" "init-fiplr.el" ".git/" "tutorial/" "ido.last" "init-projectile.el" "../" "init-neotree.el" "tramp" "init-cedet.el" "init-autopair.el" "init-avy.el" "init-evil.el" "init-sqlplus.el" "init-elpy.el" "auto-save-list/" "semanticdb/" "init-company.el" "init-tramp.el" "init-misc.el" "init-helm.el" "init-ggtags.el" "mylib.el" "init-flymake.el" "init-cider.el")
+
+ ("/home/steven/dev/clojurescript/" (22242 3173 870860 0) "helloworld-cljs/" "./" "../")
+
+ ("/home/steven/dev/" (22242 6046 730571 999000) "braveclojure/" "clojurescript/" "./" "node/" "../" "java/" "cpp/" "clojure/")
+
+ ("/home/steven/" (22242 18977 388670 0) ".gconf/" ".local/" ".vboxclient-draganddrop.pid" "tmp/" ".m2/" ".gnome2/" ".dbus/" ".gnome2_private/" ".mongorc.js" "Public/" ".vboxclient-display.pid" ".gnome/" ".Space2Ctrl.log" ".oracle_jre_usage/" "Templates/" "Documents/" "magnars-dotemacs/" "dotemacs/" "./" ".mozilla/" "Videos/" ".lesshst" ".lein/" "Pictures/" ".config/" "../" "Downloads/" ".profile" ".bashrc" ".cache/" ".smex-items" ".vboxclient-seamless.pid" ".gstreamer-0.10/" ".bash_history" ".ssh/" ".ICEauthority" ".pki/" "tools/" ".env_vars" ".gnupg/" ".bash_logout" ".vboxclient-clipboard.pid" "Desktop/" ".java/" "Music/" ".emacs.d/" "dev/")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/" (22242 5353 256007 999000) "server/" "./" "../")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/" (22242 6268 869586 0) "README.md" ".hgignore" ".gitignore" "LICENSE" "out/" "./" "test/" ".nrepl-port" "src/" "entrypoint.js" "../" "doc/" "resources/" "target/" "CHANGELOG.md" "project.clj")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/out/" (22242 5646 334474 0) "server/" "./" "../")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/server/" (22242 5353 256007 999000) "./" "../" "helloworld_cljs/")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/helloworld_cljs/" (22242 3173 878864 0) "core.clj" "./" "../")
+
+ ("/home/steven/dev/clojure/" (22225 26978 330308 33000) "./" "../" "sample-clojure-web/")
+
+ ("/home/steven/tools/mongodb/" (22226 37253 711697 999000) "./" "x86_64-3.2.3/" "mongodb-linux-x86_64-debian71-3.2.3.tgz" "../")
+
+ ("/home/steven/tools/" (22226 37116 363057 998000) "emacs-24.5/" "mongodb/" "pip/" "./" "Space2Ctrl/" "../" "java/" "emacs-24.5.tar.gz" "global/")
+
+ ("/home/steven/tools/mongodb/x86_64-3.2.3/" (22226 37217 237470 0) "MPL-2" "./" "bin/" "../" "README" "THIRD-PARTY-NOTICES" "GNU-AGPL-3.0")
+
+ ("/home/steven/dev/clojure/concurrency_play/src/" (22217 25039 495583 0) "concurrency_play/" "./" "../")
+
+ ("/home/steven/dev/clojure/concurrency_play/" (22224 60491 21131 412000) "README.md" ".hgignore" ".gitignore" "LICENSE" "./" "test/" ".nrepl-port" "src/" "../" "doc/" "resources/" "target/" "CHANGELOG.md" "project.clj")
+
+ ("/home/" (22206 63458 936000 0) "./" "../" "steven/")
+
+ ("/home/steven/Desktop/" (22207 119 752000 0) "./" "../")
+
+ ("/home/steven/dev/clojure/concurrency_play/src/concurrency_play/" (22224 59356 650229 414000) "core.clj" "./" "../")
+
+ ("/home/steven/dev/clojure/macroplay/" (22215 56022 481864 0) "README.md" ".hgignore" ".gitignore" "LICENSE" "./" "test/" ".nrepl-port" "src/" "../" "doc/" "resources/" "target/" "CHANGELOG.md" "project.clj")
+
+ ("/home/steven/Documents/" (22207 119 752000 0) "./" "../")
+
+ ("/home/steven/dev/clojure/macroplay/src/macroplay/" (22215 58671 289605 998000) "core.clj" "./" "../" "mymacros.clj")
+
+ ("/home/steven/dev/java/jdk1.8.0_73/" (22188 6021 0 0) "man/" "src.zip" "COPYRIGHT" "jre/" "release" "LICENSE" "THIRDPARTYLICENSEREADME.txt" "include/" "./" "javafx-src.zip" "bin/" "db/" "../" "lib/" "THIRDPARTYLICENSEREADME-JAVAFX.txt" "README.html")
+
+ ("/home/steven/dev/java/" (22215 55120 927311 999000) "jdk-8u73-linux-x64.tar.gz" "./" "../")
+
+ ("/home/steven/dotemacs/auto-save-list/" (22207 10037 983428 494000) "./" "../")
+
+ ("/home/steven/dev/cpp/" (22207 8910 539428 494000) "./" "../" "helloworld.cpp")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

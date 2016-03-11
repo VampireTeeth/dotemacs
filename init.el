@@ -72,6 +72,11 @@
 	avy
 	;; inferior mongodb mode for emacs
 	inf-mongo
+	flx-ido
+	ido-vertical-mode
+	dash
+	ido-at-point
+	ido-ubiquitous
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -114,6 +119,7 @@
 	"ensime"
 	"neotree"
 	"avy"
+	"ido"
 	"misc"
 	)
 	"A list of file suffix to load.")
@@ -123,3 +129,6 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (put 'upcase-region 'disabled nil)
+
+
+(eval-after-load 'ido '(require 'setup-ido))
