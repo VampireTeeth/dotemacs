@@ -79,6 +79,7 @@
 	ido-ubiquitous
 	clj-refactor
 	zenburn-theme
+	expand-region
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -123,6 +124,7 @@
 	"avy"
 	"ido"
 	"clj-refactor"
+	"expand-region"
 	"misc"
 	)
 	"A list of file suffix to load.")
