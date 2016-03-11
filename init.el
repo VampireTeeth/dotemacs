@@ -18,6 +18,7 @@
 	company
 	helm
 	helm-company
+	helm-projectile
 	;;ac-helm
 	function-args
 	yasnippet
@@ -110,6 +111,7 @@
 	"helm"
 	;;"ac-helm"
 	"helm-company"
+	"helm-projectile"
 	"autopair"
 	"cedet"
 	"elpy"
