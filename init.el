@@ -14,9 +14,10 @@
   ;;                 sass-mode rainbow-mode scss-mode solarized-theme
   ;;                 volatile-highlights yaml-mode yari zenburn-theme)
   '(
-	auto-complete
-	;;company
-	;;helm
+	;;auto-complete
+	company
+	helm
+	helm-company
 	;;ac-helm
 	function-args
 	yasnippet
@@ -37,6 +38,7 @@
 	;;:plugins [[cider/cider-nrepl "0.11.0-SNAPSHOT"]]
 	;;}}
 	cider
+	ac-cider
 	php-mode
 	web-mode
 	smarty-mode
@@ -103,10 +105,11 @@
 
 (defvar load-file-suffixes
   '("ace-window"
-	"auto-complete"
-	;;"helm"
+	;;"auto-complete"
+	"company"
+	"helm"
 	;;"ac-helm"
-	;;"company"
+	"helm-company"
 	"autopair"
 	"cedet"
 	"elpy"
@@ -129,6 +132,7 @@
 	"clj-refactor"
 	"expand-region"
 	"key-chord"
+	"ac-cider"
 	"misc"
 	)
 	"A list of file suffix to load.")
