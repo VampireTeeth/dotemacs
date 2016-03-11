@@ -136,3 +136,17 @@
 
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'clj-refactor '(require 'setup-clj-refactor))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+	("708df3cbb25425ccbf077a6e6f014dc3588faba968c90b74097d11177b711ad1" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
