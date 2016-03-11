@@ -24,10 +24,11 @@
 ;; ----- ido-work-directory-list -----
 (
  "/home/steven/dotemacs/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/"
+ "/home/steven/dev/clojurescript/helloworld-cljs/"
+ "/home/steven/magnars-dotemacs/"
  "/home/steven/magnars-dotemacs/settings/"
  "/home/steven/.emacs.d/"
- "/home/steven/dev/clojurescript/helloworld-cljs/"
- "/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/"
  "/home/steven/"
  "/home/steven/dev/clojurescript/helloworld-cljs/out/server/"
  "/home/steven/dev/clojurescript/helloworld-cljs/out/server/helloworld_cljs/"
@@ -41,20 +42,26 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "core.cljs"
+ "project.clj"
+ "init-ido.el"
  "setup-ido.el"
  "ido.last"
  "init-evil.el"
  "ac-comphist.dat"
- "project.clj"
- "core.cljs"
  ".env_vars"
  "helloworld_cljs.js"
- "core.clj"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/steven/dotemacs/" (22242 19104 864375 999000) "globalrc" "init-pascal-mode.el" "init-web-mode.el" "init-function-args.el" "init-ido.el" "projectile-bookmarks.eld" "init-highlight-parentheses.el" "init.el" ".gitignore" "ac-comphist.dat" "init-auto-complete.el" "init-ensime.el" "init-yasnippet.el" "init-iedit.el" "init-ace-window.el" "elpa/" "./" "snippets/" "init-fiplr.el" ".git/" "tutorial/" "ido.last" "init-projectile.el" "../" "init-neotree.el" "tramp" "init-cedet.el" "init-autopair.el" "init-avy.el" "init-evil.el" "init-sqlplus.el" "init-elpy.el" "auto-save-list/" "semanticdb/" "init-company.el" "init-tramp.el" "init-misc.el" "init-helm.el" "init-ggtags.el" "mylib.el" "init-flymake.el" "init-cider.el")
+ ("/home/steven/dotemacs/" (22242 20390 827036 0) "globalrc" "init-pascal-mode.el" "init-web-mode.el" "init-function-args.el" "init-ido.el" "projectile-bookmarks.eld" "init-highlight-parentheses.el" "init.el" ".gitignore" "ac-comphist.dat" "init-auto-complete.el" "init-ensime.el" "init-yasnippet.el" "init-iedit.el" "init-ace-window.el" "elpa/" "./" "snippets/" "init-fiplr.el" ".git/" "tutorial/" "ido.last" "init-projectile.el" "../" "init-neotree.el" "tramp" "init-cedet.el" "init-autopair.el" "init-avy.el" "init-evil.el" "init-sqlplus.el" "init-elpy.el" "auto-save-list/" "semanticdb/" "init-company.el" "init-tramp.el" "init-misc.el" "ido.last~" "init-helm.el" "init-ggtags.el" "mylib.el" "init-flymake.el" "init-cider.el")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/" (22242 20246 847081 999000) "README.md" ".hgignore" ".gitignore" "LICENSE" "out/" "./" "test/" "src/" "entrypoint.js" "../" "doc/" "resources/" "target/" "CHANGELOG.md" "project.clj")
+
+ ("/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/" (22242 20026 821123 999000) "core.cljs" "./" "../")
+
+ ("/usr/local/share/emacs/24.5/etc/" (22207 10492 531428 494000) "srecode/" "grep.txt" "gnus-tut.txt" "MH-E-NEWS" "COPYING" "WHY-FREE" "NEWS.23" "ERC-NEWS" "ORDERS" "future-bug" "GNUS-NEWS" "nxml/" "rgb.txt" "forms/" "LINUX-GNU" "JOKES" "NEWS.22" "compilation.txt" "e/" "emacs.desktop" "ses-example.ses" "tutorials/" "yow.lines" "spook.lines" "NEWS" "THE-GNU-PROJECT" "PROBLEMS" "publicsuffix.txt" "CALC-NEWS" "./" "emacs.appdata.xml" "AUTHORS" "NEWS.21" "package-keyring.gpg" "NEWS.18" "CONTRIBUTE" "TERMS" "emacs-buffer.gdb" "DEBUG" "images/" "gnus/" "CENSORSHIP" "../" "NEXTSTEP" "ORG-NEWS" "charsets/" "NEWS.1-17" "edt-user.el" "README" "DEVEL.HUMOR" "NEWS.19" "ps-prin0.ps" "ps-prin1.ps" "NEWS.20" "NXML-NEWS" "themes/" "HELLO" "DISTRIB" "DOC" "schema/" "refcards/" "ETAGS.EBNF" "FTP" "enriched.txt" "emacs.icon" "GNU" "MORE.STUFF" "ETAGS.README" "MACHINES" "org/" "TODO")
 
  ("/home/steven/magnars-dotemacs/settings/" (22242 18061 218814 0) "setup-shell.el" "setup-org.el" "setup-magit.el" "setup-package.el" "mac.el" "setup-ffip.el" "setup-flycheck.el" "setup-ruby-mode.el" "./" "setup-clojure-mode.el" "setup-html-mode.el" "setup-perspective.el" "../" "sane-defaults.el" "mode-mappings.el" "setup-paredit.el" "appearance.el" "setup-markdown-mode.el" "setup-ido.el" "setup-elnode.el" "setup-hippie.el" "setup-rgrep.el" "my-misc.el" "setup-skewer.el" "setup-js2-mode.el" "setup-dired.el" "setup-yasnippet.el" "key-bindings.el")
 
@@ -66,8 +73,6 @@
 
  ("/home/steven/dev/clojurescript/helloworld-cljs/out/server/" (22242 6603 808971 999000) "BCE03FE.js" "cljs_deps.js" "./" "cljs/" "goog/" "../" "helloworld_cljs.js" "helloworld_cljs/" "B098ACE.js" "A260F29.js")
 
- ("/home/steven/dev/clojurescript/helloworld-cljs/src/server/helloworld_cljs/" (22242 6554 636398 0) "core.cljs" "./" "../")
-
  ("/home/steven/.emacs.d/" (22242 19025 660794 0) "globalrc" "init-pascal-mode.el" "init-web-mode.el" "init-function-args.el" "projectile-bookmarks.eld" "init-highlight-parentheses.el" "init.el" ".gitignore" "ac-comphist.dat" "init-auto-complete.el" "init-ensime.el" "init-yasnippet.el" "init-iedit.el" "init-ace-window.el" "elpa/" "./" "snippets/" "init-fiplr.el" ".git/" "tutorial/" "ido.last" "init-projectile.el" "../" "init-neotree.el" "tramp" "init-cedet.el" "init-autopair.el" "init-avy.el" "init-evil.el" "init-sqlplus.el" "init-elpy.el" "auto-save-list/" "semanticdb/" "init-company.el" "init-tramp.el" "init-misc.el" "init-helm.el" "init-ggtags.el" "mylib.el" "init-flymake.el" "init-cider.el")
 
  ("/home/steven/dev/clojurescript/" (22242 3173 870860 0) "helloworld-cljs/" "./" "../")
@@ -77,8 +82,6 @@
  ("/home/steven/" (22242 18977 388670 0) ".gconf/" ".local/" ".vboxclient-draganddrop.pid" "tmp/" ".m2/" ".gnome2/" ".dbus/" ".gnome2_private/" ".mongorc.js" "Public/" ".vboxclient-display.pid" ".gnome/" ".Space2Ctrl.log" ".oracle_jre_usage/" "Templates/" "Documents/" "magnars-dotemacs/" "dotemacs/" "./" ".mozilla/" "Videos/" ".lesshst" ".lein/" "Pictures/" ".config/" "../" "Downloads/" ".profile" ".bashrc" ".cache/" ".smex-items" ".vboxclient-seamless.pid" ".gstreamer-0.10/" ".bash_history" ".ssh/" ".ICEauthority" ".pki/" "tools/" ".env_vars" ".gnupg/" ".bash_logout" ".vboxclient-clipboard.pid" "Desktop/" ".java/" "Music/" ".emacs.d/" "dev/")
 
  ("/home/steven/dev/clojurescript/helloworld-cljs/src/" (22242 5353 256007 999000) "server/" "./" "../")
-
- ("/home/steven/dev/clojurescript/helloworld-cljs/" (22242 6268 869586 0) "README.md" ".hgignore" ".gitignore" "LICENSE" "out/" "./" "test/" ".nrepl-port" "src/" "entrypoint.js" "../" "doc/" "resources/" "target/" "CHANGELOG.md" "project.clj")
 
  ("/home/steven/dev/clojurescript/helloworld-cljs/out/" (22242 5646 334474 0) "server/" "./" "../")
 

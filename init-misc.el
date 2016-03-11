@@ -30,11 +30,10 @@ by using nxml's indentation rules."
    (lambda (output)
 	 (replace-regexp-in-string "\\[\\?*[0-9]+[a-zA-Z]" "" output)))
   (if (display-graphic-p)
-	  (load-theme 'deeper-blue)
+	  (load-theme 'zenburn)
 	(load-theme 'leuven))
   (setq default-frame-alist
-		'(
-		  (width . 180)
+		'((width . 180)
 		  (height . 50))))
 
 (defun my:indentation-setup (n)
