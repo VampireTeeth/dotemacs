@@ -7,4 +7,4 @@
 ;; https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/scala-mode
 (add-hook 'scala-mode-hook #'yas-minor-mode)
 ;; but company-mode / yasnippet conflict. Disable TAB in company-mode with
-(define-key company-active-map [tab] nil)
+;;(define-key company-active-map [tab] nil)

@@ -14,8 +14,8 @@
   ;;                 sass-mode rainbow-mode scss-mode solarized-theme
   ;;                 volatile-highlights yaml-mode yari zenburn-theme)
   '(
-	;;auto-complete
-	company
+	auto-complete
+	;;company
 	;;helm
 	;;ac-helm
 	function-args
@@ -65,7 +65,7 @@
 	ggtags
 	;;ensime for scala
 	;;scala-mode2 for scala
-	ensime
+	;;ensime
 	scala-mode2
 	sqlplus
 	neotree
@@ -80,6 +80,7 @@
 	clj-refactor
 	zenburn-theme
 	expand-region
+	key-chord
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -102,8 +103,10 @@
 
 (defvar load-file-suffixes
   '("ace-window"
-	;;"auto-complete"
-	"company"
+	"auto-complete"
+	;;"helm"
+	;;"ac-helm"
+	;;"company"
 	"autopair"
 	"cedet"
 	"elpy"
@@ -125,6 +128,7 @@
 	"ido"
 	"clj-refactor"
 	"expand-region"
+	"key-chord"
 	"misc"
 	)
 	"A list of file suffix to load.")
