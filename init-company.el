@@ -1,5 +1,6 @@
 ;Company setup
 (require 'company)
+(setq company-idle-delay nil)
 (define-key company-mode-map [(tab)] 'company-complete)
 (define-key company-mode-map (kbd "C-x C-y") 'company-yasnippet)
 (define-key company-mode-map [(control tab)] 'company-semantic)

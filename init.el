@@ -23,6 +23,7 @@
 	function-args
 	yasnippet
 	evil
+	;;god-mode
 	auto-complete-c-headers
 	;;flymake-google-cpplint
 	autopair
@@ -83,7 +84,7 @@
 	clj-refactor
 	zenburn-theme
 	expand-region
-	key-chord
+	;;key-chord
 	)
   "A list of packages to ensure are installed at launch.")
 
@@ -116,6 +117,7 @@
 	"cedet"
 	"elpy"
 	"evil"
+	;;"god-mode"
 	"fiplr"
 	"flymake"
 	"function-args"
@@ -133,7 +135,7 @@
 	"ido"
 	"clj-refactor"
 	"expand-region"
-	"key-chord"
+	;;"key-chord"
 	"ac-cider"
 	"misc"
 	)
@@ -149,7 +151,7 @@
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'clj-refactor '(require 'setup-clj-refactor))
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
+ ;; custom-set-variables was added by custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
