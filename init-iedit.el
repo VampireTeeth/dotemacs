@@ -1,2 +1,2 @@
 ;iedit configuration
-(global-define-key (kbd "C-;") 'iedit-mode)
+(define-key global-map (kbd "C-;") 'iedit-mode)
